@@ -40,6 +40,45 @@ public static void ReverseArrayList(ArrayList list)
             return evens;
         }
         #endregion
+        #region Part1   Q3
+        //implement a custom list called FixedSizeList<T> with a predetermined capacity.
+        //This list should not allow more elements than its capacity
+        //and should provide clear messages if one tries to exceed it or access invalid indices.
+
+        public class FixedSizeList<T>
+        {
+            private readonly T[] items;
+            private int count;
+
+            public FixedSizeList(int capacity)
+            {
+                if (capacity <= 0)
+                    throw new ArgumentException("Capacity must be positive");
+
+                items = new T[capacity];
+                count = 0;
+            }
+
+            public void Add(T item)
+            {
+                if (count == items.Length)
+                    throw new InvalidOperationException("List is full");
+
+                items[count++] = item;
+            }
+
+            public T Get(int index)
+            {
+                if (index < 0 || index >= count)
+                    throw new IndexOutOfRangeException("Invalid index");
+
+                return items[index];
+            }
+
+            public int Capacity => items.Length;
+            public int Count => count;
+        }
+        #endregion
 
 
     }
