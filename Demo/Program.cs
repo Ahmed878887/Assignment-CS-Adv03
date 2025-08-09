@@ -79,7 +79,30 @@ public static void ReverseArrayList(ArrayList list)
             public int Count => count;
         }
         #endregion
+        #region Part1   Q4
+        //Given an array  consists of  numbers with size N and number of queries,
+        //in each query you will be given an integer X,
+        //and you should print how many numbers in array that is greater than  X.
+        public static void CountGreaterThanX()
+        {
+            string[] firstLine = Console.ReadLine().Split();
+            int n = int.Parse(firstLine[0]);
+            int q = int.Parse(firstLine[1]);
 
+            int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+            for (int i = 0; i < q; i++)
+            {
+                int x = int.Parse(Console.ReadLine());
+                int count = 0;
+                foreach (int num in arr)
+                {
+                    if (num > x) count++;
+                }
+                Console.WriteLine(count);
+            }
+        }
+        #endregion
 
     }
 }
