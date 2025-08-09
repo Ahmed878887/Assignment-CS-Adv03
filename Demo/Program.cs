@@ -137,6 +137,21 @@ public static void ReverseArrayList(ArrayList list)
             return result.ToArray();
         }
         #endregion
+        #region Part1   Q7
+        // Given an array list , implement a function to remove all odd numbers from it.
+
+        public static void RemoveOddNumbers(ArrayList list)
+        {
+            for (int i = list.Count - 1; i >= 0; i--)
+            {
+                if (list[i] is int num && num % 2 != 0)
+                {
+                    list.RemoveAt(i);
+                }
+            }
+        }
+        #endregion
+
     }
 }
 }
