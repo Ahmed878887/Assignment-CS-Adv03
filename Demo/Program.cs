@@ -103,7 +103,20 @@ public static void ReverseArrayList(ArrayList list)
             }
         }
         #endregion
-
+        #region Part1   Q5
+        //Given a number N and an array of N numbers. Determine if it's palindrome or not.
+        public static string IsPalindrome(int[] arr)
+        {
+            for (int i = 0; i < arr.Length / 2; i++)
+            {
+                if (arr[i] != arr[arr.Length - 1 - i])
+                {
+                    return "NO";
+                }
+            }
+            return "YES";
+        }
+        #endregion
     }
 }
 }
