@@ -117,6 +117,26 @@ public static void ReverseArrayList(ArrayList list)
             return "YES";
         }
         #endregion
+        #region Part1   Q6
+        //Given an array, implement a function to remove duplicate elements from an array.
+
+        public static int[] RemoveDuplicates(int[] arr)
+        {
+            HashSet<int> seen = new HashSet<int>();
+            List<int> result = new List<int>();
+
+            foreach (int num in arr)
+            {
+                if (!seen.Contains(num))
+                {
+                    seen.Add(num);
+                    result.Add(num);
+                }
+            }
+
+            return result.ToArray();
+        }
+        #endregion
     }
 }
 }
