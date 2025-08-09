@@ -24,6 +24,24 @@ public static void ReverseArrayList(ArrayList list)
         }
 
         #endregion
+        #region Part1   Q2
+        //You are given a list of integers. Your task is to find and return a new list containing only the even numbers from the given list.
+
+        public static List<int> GetEvenNumbers(List<int> numbers)
+        {
+            List<int> evens = new List<int>();
+            foreach (int num in numbers)
+            {
+                if (num % 2 == 0)
+                {
+                    evens.Add(num);
+                }
+            }
+            return evens;
+        }
+        #endregion
+
+
     }
-    }
+}
 }
